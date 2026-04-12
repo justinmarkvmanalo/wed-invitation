@@ -87,8 +87,10 @@ document.querySelectorAll('section[id]').forEach(s => navObserver.observe(s));
         player.classList.add('playing');
         iconPlay.style.display  = 'none';
         iconPause.style.display = 'block';
+        // Once successfully playing, remove global unlock listeners
+        removeUnlockListeners();
       }).catch(err => {
-        console.warn("Autoplay blocked, waiting for interaction.");
+        console.warn("Playback prevented, waiting for interaction.");
         isPlaying = false;
       });
     } else {
@@ -98,6 +100,24 @@ document.querySelectorAll('section[id]').forEach(s => navObserver.observe(s));
       iconPlay.style.display  = 'block';
       iconPause.style.display = 'none';
     }
+  }
+
+  function unlock() {
+    if (!isPlaying) setPlaying(true);
+  }
+
+  function removeUnlockListeners() {
+    document.removeEventListener('click',      unlock);
+    document.removeEventListener('touchstart', unlock);
+    document.removeEventListener('keydown',    unlock);
+    document.removeEventListener('mousedown',  unlock);
+  }
+
+  function addUnlockListeners() {
+    document.addEventListener('click',      unlock);
+    document.addEventListener('touchstart', unlock);
+    document.addEventListener('keydown',    unlock);
+    document.addEventListener('mousedown',  unlock);
   }
 
   toggle.addEventListener('click', (e) => {
@@ -110,23 +130,15 @@ document.querySelectorAll('section[id]').forEach(s => navObserver.observe(s));
     player.classList.toggle('collapsed', isCollapsed);
   });
 
+  // 1. Try to play immediately on load
   audio.play().then(() => {
     isPlaying = true;
     player.classList.add('playing');
     iconPlay.style.display  = 'none';
     iconPause.style.display = 'block';
   }).catch(() => {
-    const unlock = () => {
-      if (!isPlaying) setPlaying(true);
-      document.removeEventListener('click',      unlock);
-      document.removeEventListener('touchstart', unlock);
-      document.removeEventListener('keydown',    unlock);
-      document.removeEventListener('scroll',     unlock);
-    };
-    document.addEventListener('click',      unlock, { once: true });
-    document.addEventListener('touchstart', unlock, { once: true });
-    document.addEventListener('keydown',    unlock, { once: true });
-    document.addEventListener('scroll',     unlock, { once: true });
+    // 2. If blocked, setup listeners for ANY user interaction
+    addUnlockListeners();
   });
 })();
 
