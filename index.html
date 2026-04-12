@@ -1017,14 +1017,19 @@ document.querySelectorAll('section[id]').forEach(s => navObserver.observe(s));
   audio.volume = 0.55;
 
   function setPlaying(state) {
-    isPlaying = state;
     if (state) {
-      audio.play();
-      player.classList.add('playing');
-      iconPlay.style.display  = 'none';
-      iconPause.style.display = 'block';
+      audio.play().then(() => {
+        isPlaying = true;
+        player.classList.add('playing');
+        iconPlay.style.display  = 'none';
+        iconPause.style.display = 'block';
+      }).catch(err => {
+        console.warn("Autoplay blocked, waiting for interaction.");
+        isPlaying = false;
+      });
     } else {
       audio.pause();
+      isPlaying = false;
       player.classList.remove('playing');
       iconPlay.style.display  = 'block';
       iconPause.style.display = 'none';
