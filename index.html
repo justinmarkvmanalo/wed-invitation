@@ -3,387 +3,442 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shakiell & Chara — June 20, 2026</title>
+  <title>Shakiell &amp; Chara &mdash; June 20, 2026</title>
   <link rel="icon" type="image/png" href="images/wedding_logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="petals-canvas"></div>
 
-<div id="petals-canvas"></div>
+  <audio id="bg-audio" loop>
+    <source src="Ballade_Pour_Adeline_-_Richard_Clayderman__Piano_Cover_by_Riyandi_Kusuma_.mp3" type="audio/mpeg">
+  </audio>
 
-<!-- ══ MUSIC PLAYER ══ -->
-<audio id="bg-audio" loop>
-  <source src="Ballade_Pour_Adeline_-_Richard_Clayderman__Piano_Cover_by_Riyandi_Kusuma_.mp3" type="audio/mpeg">
-</audio>
-
-<div id="music-player">
-  <div id="vinyl-disc" title="Click to show/hide player">
-    <img src="images/wedding_logo.png" alt="S&amp;C logo">
-  </div>
-  <div id="music-label">
-    <div id="music-bars">
-      <span></span><span></span><span></span><span></span>
+  <div id="music-player">
+    <div id="vinyl-disc" title="Click to show or hide player">
+      <img src="images/wedding_logo.png" alt="S&amp;C logo">
     </div>
-    <span id="music-label-text">Ballade Pour Adeline</span>
-    <button id="music-toggle" aria-label="Play / Pause music" title="Play / Pause">
-      <svg id="icon-play" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="7,4 20,12 7,20" fill="rgba(255,255,255,0.9)" stroke="none"/>
-      </svg>
-      <svg id="icon-pause" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none;">
-        <rect x="5" y="4" width="4" height="16" rx="1" fill="rgba(255,255,255,0.9)"/>
-        <rect x="15" y="4" width="4" height="16" rx="1" fill="rgba(255,255,255,0.9)"/>
-      </svg>
-    </button>
-  </div>
-</div>
-
-<nav id="side-nav">
-  <a href="#hero"      data-label="Home"      data-sec="hero"></a>
-  <a href="#countdown" data-label="Countdown" data-sec="countdown"></a>
-  <a href="#entourage" data-label="Entourage" data-sec="entourage"></a>
-  <a href="#program"   data-label="Timeline"  data-sec="program"></a>
-  <a href="#maps"      data-label="Maps"      data-sec="maps"></a>
-  <a href="#dresscode" data-label="Dress Code" data-sec="dresscode"></a>
-  <a href="#rsvp"      data-label="RSVP"      data-sec="rsvp"></a>
-  <a href="#gifts"     data-label="Gifts"     data-sec="gifts"></a>
-  <a href="#faqs"      data-label="FAQs"      data-sec="faqs"></a>
-</nav>
-
-<!-- ══ HERO ══ -->
-<section id="hero">
-  <!-- RIGHT flower: flower6.png is the pre-flipped version of flower2.png -->
-  <img class="hero-flower-right" src="images/flower6.png" alt=""
-     style="width:190px; right:-110px; top:170px; position:absolute; transform:rotate(58deg); filter:blur(0.8px);">
-  <img class="hero-flower5" src="images/flower1.png" alt="">
-    
-  <!-- LEFT flower: original flower2.png -->
-  <img class="hero-flower-left" src="images/flower2.png" alt=""
-     style="width:190px; left:-110px; top:170px; transform:rotate(58deg); filter:blur(0.8px);">
-  <img class="hero-flower5" src="images/flower1.png" alt="">
-
-  <p class="welcome-text">Welcome to the wedding of</p>
-
-  <!-- Logo image replacing the animated letter-by-letter names -->
-  <div class="hero-logo-wrap">
-    <img
-      class="hero-logo-img"
-      src="images/name.png"
-      alt="Shakiell &amp; Chara"
-    >
-  </div>
-
-  <div class="hero-line"></div>
-  <div class="hero-details">
-    June 20, 2026, Saturday<br>
-    0900H in the Morning<br>
-    St. Isidore the Farmer Parish · Agdangan, Quezon<br>
-    Reception at Salvatierra Beach Resort
-  </div>
-
-  <div class="hero-resort-wrap">
-    <img src="images/resort.png" alt="Salvatierra Beach Resort">
-    <span class="hero-verse">"Two are better than one, because they have a good return for their labor: If either of them falls down, one can help the other up."</span>
-    <span class="hero-verse-ref">— Ecclesiastes 4:9–10</span>
-  </div>
-</section>
-
-<!-- ══ COUNTDOWN ══ -->
-<section id="countdown" class="fade-section">
-  <p class="cd-label">Time Left 'Til We Say "I Do"</p>
-  <div class="cd-timer">
-    <div class="cd-unit"><span class="cd-num" id="days">00</span><span class="cd-sub">Days</span></div>
-    <div class="cd-sep">:</div>
-    <div class="cd-unit"><span class="cd-num" id="hours">00</span><span class="cd-sub">Hours</span></div>
-    <div class="cd-sep">:</div>
-    <div class="cd-unit"><span class="cd-num" id="minutes">00</span><span class="cd-sub">Minutes</span></div>
-    <div class="cd-sep">:</div>
-    <div class="cd-unit"><span class="cd-num" id="seconds">00</span><span class="cd-sub">Seconds</span></div>
-  </div>
-</section>
-
-<!-- ══ ENTOURAGE ══ -->
-<section id="entourage" class="fade-section" style="text-align:center;">
-  <img class="sec-flower" style="top:-10px;right:-30px;width:220px;height:auto;opacity:0.35;transform:rotate(8deg);filter:grayscale(100%);" src="images/flower3.png" alt="">
-  <img class="sec-flower" style="bottom:3px;left:-10px;width:180px;height:auto;" src="images/flower1.png" alt="">
-
-  <div class="sec-title-wrap">
-    <div class="ornament-divider">
-      <div class="orn-line"></div>
-      <div class="orn-dot"></div>
-      <div class="orn-dot-gap"></div>
-      <div class="orn-diamond"></div>
-      <div class="orn-dot-gap"></div>
-      <div class="orn-dot"></div>
-      <div class="orn-line"></div>
-    </div>
-    <span class="sec-title">The Entourage</span>
-    <span class="sec-sub">With praise &amp; thanksgiving to God and blessing from our beloved parents</span>
-  </div>
-
-  <div class="section-frame">
-    <div class="frame-inner"></div>
-    <div class="corner-tr"></div><div class="corner-bl"></div>
-    <div class="e-grid">
-      <div class="e-group"><h3>Parents of the Groom</h3><p>Mr. Danny R. Santos<br>Mrs. Linda R. Santos</p></div>
-      <div class="e-group"><h3>Parents of the Bride</h3><p>Mr. Guillermo E. Ramos<br>Mrs. Marissa B. Ramos</p></div>
-      <div class="e-divider">— To Stand as Witness to Our Vows —</div>
-      <div class="e-group"><h3>Principal Sponsors</h3><p>Mr. Jun Rocafort<br>Mr. Joseph Mendoza</p></div>
-      <div class="e-group"><h3>&nbsp;</h3><p>Mrs. Rose Perla<br>Mrs. Jessica B. Mendoza</p></div>
-      <div class="e-divider">— To Stand as Witness to Our Vows —</div>
-      <div class="e-group"><h3>Best Man</h3><p>Mr. Dan Paolo San</p></div>
-      <div class="e-group"><h3>Maid of Honor</h3><p>Ms. Gilmarie Silva</p></div>
+    <div id="music-label">
+      <div id="music-bars">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <span id="music-label-text">Ballade Pour Adeline</span>
+      <button id="music-toggle" aria-label="Play or pause music" title="Play or Pause" type="button">
+        <svg id="icon-play" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="7,4 20,12 7,20" fill="rgba(255,255,255,0.9)" stroke="none"></polygon>
+        </svg>
+        <svg id="icon-pause" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" hidden>
+          <rect x="5" y="4" width="4" height="16" rx="1" fill="rgba(255,255,255,0.9)"></rect>
+          <rect x="15" y="4" width="4" height="16" rx="1" fill="rgba(255,255,255,0.9)"></rect>
+        </svg>
+      </button>
     </div>
   </div>
-</section>
 
-<!-- ══ PROGRAM / WEDDING TIMELINE ══ -->
-<section id="program" class="fade-section" style="text-align:center;">
-  <div class="sec-title-wrap">
-    <div class="ornament-divider">
-      <div class="orn-line"></div>
-      <div class="orn-dot"></div>
-      <div class="orn-dot-gap"></div>
-      <div class="orn-diamond"></div>
-      <div class="orn-dot-gap"></div>
-      <div class="orn-dot"></div>
-      <div class="orn-line"></div>
-    </div>
-    <span class="sec-title">Wedding Timeline</span>
-    <span class="sec-sub">The order of events</span>
-  </div>
+  <nav id="side-nav" aria-label="Section navigation">
+    <a href="#hero" data-label="Home" data-sec="hero"></a>
+    <a href="#countdown" data-label="Countdown" data-sec="countdown"></a>
+    <a href="#entourage" data-label="Entourage" data-sec="entourage"></a>
+    <a href="#program" data-label="Timeline" data-sec="program"></a>
+    <a href="#maps" data-label="Maps" data-sec="maps"></a>
+    <a href="#dresscode" data-label="Dress Code" data-sec="dresscode"></a>
+    <a href="#rsvp" data-label="RSVP" data-sec="rsvp"></a>
+    <a href="#gifts" data-label="Gifts" data-sec="gifts"></a>
+    <a href="#faqs" data-label="FAQs" data-sec="faqs"></a>
+  </nav>
 
-  <div class="section-frame" style="max-width:820px;">
-    <div class="frame-inner"></div>
-    <div class="corner-tr"></div><div class="corner-bl"></div>
-    <div class="timeline-wrap">
-      <div class="timeline-row">
-        <div class="tl-item">
-          <div class="tl-icon">
-            <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><circle cx="18" cy="7" r="2"/><path d="M21 14c0-2 1.3-3 2.5-3"/></svg>
+  <main>
+    <section id="hero">
+      <img class="hero-flower hero-flower-right hero-flower-top-right" src="images/flower6.png" alt="" aria-hidden="true">
+      <img class="hero-flower5 hero-flower5-left" src="images/flower1.png" alt="" aria-hidden="true">
+      <img class="hero-flower hero-flower-left hero-flower-top-left" src="images/flower2.png" alt="" aria-hidden="true">
+      <img class="hero-flower5 hero-flower5-right" src="images/flower1.png" alt="" aria-hidden="true">
+
+      <p class="welcome-text">Welcome to the wedding of</p>
+
+      <div class="hero-logo-wrap">
+        <img class="hero-logo-img" src="images/name.png" alt="Shakiell &amp; Chara">
+      </div>
+
+      <div class="hero-line"></div>
+      <div class="hero-details">
+        June 20, 2026, Saturday<br>
+        0900H in the Morning<br>
+        St. Isidore the Farmer Parish &middot; Agdangan, Quezon<br>
+        Reception at Salvatierra Beach Resort
+      </div>
+
+      <div class="hero-resort-wrap">
+        <img src="images/resort.png" alt="Salvatierra Beach Resort">
+        <span class="hero-verse">"Two are better than one, because they have a good return for their labor: If either of them falls down, one can help the other up."</span>
+        <span class="hero-verse-ref">&mdash; Ecclesiastes 4:9&ndash;10</span>
+      </div>
+    </section>
+
+    <section id="countdown" class="fade-section">
+      <p class="cd-label">Time Left 'Til We Say "I Do"</p>
+      <div class="cd-timer">
+        <div class="cd-unit"><span class="cd-num" id="days">00</span><span class="cd-sub">Days</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="hours">00</span><span class="cd-sub">Hours</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="minutes">00</span><span class="cd-sub">Minutes</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="seconds">00</span><span class="cd-sub">Seconds</span></div>
+      </div>
+    </section>
+
+    <section id="entourage" class="fade-section section-centered">
+      <img class="sec-flower sec-flower-entourage-top-right" src="images/flower3.png" alt="" aria-hidden="true">
+      <img class="sec-flower sec-flower-entourage-bottom-left" src="images/flower1.png" alt="" aria-hidden="true">
+
+      <div class="sec-title-wrap">
+        <div class="ornament-divider">
+          <div class="orn-line"></div>
+          <div class="orn-dot"></div>
+          <div class="orn-dot-gap"></div>
+          <div class="orn-diamond"></div>
+          <div class="orn-dot-gap"></div>
+          <div class="orn-dot"></div>
+          <div class="orn-line"></div>
+        </div>
+        <span class="sec-title">The Entourage</span>
+        <span class="sec-sub">With praise &amp; thanksgiving to God and blessing from our beloved parents</span>
+      </div>
+
+      <div class="section-frame section-frame-wide">
+        <div class="frame-inner"></div>
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="e-grid e-grid-entourage">
+          <div class="e-group">
+            <h3>Parents of the Bride</h3>
+            <p>Mr. Gregorio Marte Quinto<br>Mrs. Editha Flores Quinto</p>
           </div>
-          <span class="tl-time">8:30 AM</span>
-          <span class="tl-event">Arrival of<br>Guests</span>
-        </div>
-        <div class="tl-item">
-          <div class="tl-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2v3M8 5.5l1.5 2M16 5.5l-1.5 2"/><path d="M5 13c0-3.9 3.1-7 7-7s7 3.1 7 7c0 2.5-1.3 4.7-3.3 6L12 22l-3.7-3c-2-1.3-3.3-3.5-3.3-6z"/><circle cx="12" cy="13" r="2"/></svg>
+          <div class="e-group">
+            <h3>Parents of the Groom</h3>
+            <p>Mr. Bravnel Marcial Enciso<br>Mrs. Mila Marcial Landicho</p>
           </div>
-          <span class="tl-time">9:00 AM</span>
-          <span class="tl-event">Wedding<br>Ceremony</span>
-        </div>
-        <div class="tl-item">
-          <div class="tl-icon">
-            <svg viewBox="0 0 24 24"><path d="M7 3l5 7 5-7"/><line x1="12" y1="10" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/><path d="M17 6c1-1 3-.5 3 1.5a3 3 0 01-3 3"/></svg>
+
+          <div class="e-group">
+            <h3>Best Man</h3>
+            <p>Reineil Enciso</p>
           </div>
-          <span class="tl-time">11:00 AM</span>
-          <span class="tl-event">Cocktail<br>Hour</span>
-        </div>
-        <div class="tl-item">
-          <div class="tl-icon">
-            <svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+          <div class="e-group">
+            <h3>Maid of Honor</h3>
+            <p>Jhenalyn P Quintos</p>
           </div>
-          <span class="tl-time">12:00 PM</span>
-          <span class="tl-event">Reception<br>Lunch</span>
-        </div>
-        <div class="tl-item">
-          <div class="tl-icon">
-            <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/><circle cx="12" cy="12" r="9"/></svg>
+
+          <div class="e-divider">&mdash; Principal Sponsors &mdash;</div>
+          <div class="e-divider e-divider-sub">To stand witness to our vows</div>
+
+          <div class="e-group">
+            <h3>Principal Sponsors</h3>
+            <p>Mr. Reynante Deseo<br>Mr. Benson Oliveros<br>Mr. Jed Frank S. Marqueses<br>Mr. Carlo Mill C. Caparros</p>
           </div>
-          <span class="tl-time">3:00 PM</span>
-          <span class="tl-event">Farewell</span>
+          <div class="e-group">
+            <h3>&nbsp;</h3>
+            <p>Mrs. Clarissa Albos Veran<br>Mrs. Nemcy Avellanida<br>Mrs. Jovy O, Belmil<br>Mrs. Arsenia A, Enciso</p>
+          </div>
+
+          <div class="e-divider">&mdash; Secondary Sponsors &mdash;</div>
+          <div class="e-divider e-divider-sub">To assist us on our needs</div>
+
+          <div class="e-group">
+            <h3>Candle</h3>
+            <p>Nel M Enciso Jr<br>Heidi T Imperial<br><br>Rodmar Serrano<br>Arianne Sanchez</p>
+          </div>
+          <div class="e-group">
+            <h3>Veil</h3>
+            <p>John Kennedy Cueto<br>Mary Lois Zoleta<br><br>Prince Jansen Palma<br>Nina Kate Quinto</p>
+          </div>
+
+          <div class="e-group">
+            <h3>Cord</h3>
+            <p>Mark Samuel Dela Trinidad<br>Djoanna Karren Castro<br><br>Mikko Ebsolo<br>Marianne Anda</p>
+          </div>
+          <div class="e-group">
+            <h3>Groomsmen</h3>
+            <p>Aleber Ramirez<br>King Crister Dela Rosa<br>JL. Ragsag<br>Harvey A&ntilde;onuevo<br>Jay Erwin Atilano</p>
+          </div>
+
+          <div class="e-group">
+            <h3>Bridesmaids</h3>
+            <p>Mylene Oabel<br>Angel Sandoval<br>Karen Enciso<br>Kiara Zelle Quinto<br>Paula Winona</p>
+          </div>
+          <div class="e-group">
+            <h3>Coin Bearer</h3>
+            <p>Carl lan Quinto</p>
+            <h3 class="e-subrole">Bible Bearer</h3>
+            <p>Lea Jane P Landicho</p>
+            <h3 class="e-subrole">Ring Bearer</h3>
+            <p>Jess Patok</p>
+          </div>
+
+          <div class="e-group">
+            <h3>Banner Bearers</h3>
+            <p>Aira Mistas Mercado<br>Calia Irava Quinto</p>
+            <h3 class="e-subrole">Little Bride</h3>
+            <p>Ariya Zemira Dalaodao</p>
+            <h3 class="e-subrole">Little Groom</h3>
+            <p>Sebastian Enciso</p>
+          </div>
+          <div class="e-group">
+            <h3>Flower Girls</h3>
+            <p>Princess Rize Quinto<br>Naomi Delos Reyes<br>Jennilyn P Landicho<br>Yannah Fajardo<br>Elisha Quinto Princess<br>Myra P Isla</p>
+          </div>
         </div>
       </div>
-      <div class="reception-note">
-        <span class="reception-note-label">Reception Venue</span>
-        <span class="reception-note-venue">Salvatierra Beach Resort, Quezon</span>
+    </section>
+
+    <section id="program" class="fade-section section-centered">
+      <div class="sec-title-wrap">
+        <div class="ornament-divider">
+          <div class="orn-line"></div>
+          <div class="orn-dot"></div>
+          <div class="orn-dot-gap"></div>
+          <div class="orn-diamond"></div>
+          <div class="orn-dot-gap"></div>
+          <div class="orn-dot"></div>
+          <div class="orn-line"></div>
+        </div>
+        <span class="sec-title">Wedding Timeline</span>
+        <span class="sec-sub">The order of events</span>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ══ MAPS ══ -->
-<section id="maps" class="fade-section" style="text-align:center;">
-  <img class="sec-flower" style="left:-20px;top:50%;transform:translateY(-50%);width:140px;height:auto;opacity:0.25;filter:grayscale(100%);" src="images/flower4.png" alt="">
-  <img class="sec-flower" style="right:-10px;bottom:30px;width:75px;height:auto;opacity:0.20;transform:scaleX(-1);filter:grayscale(100%);" src="images/flower1.png" alt="">
-  <img class="sec-flower" style="right:-20px;top:-15px;width:160px;height:auto;opacity:0.20;transform:rotate(25deg) scaleX(-1);filter:grayscale(100%);" src="images/flower3.png" alt="">
-
-  <div class="sec-title-wrap">
-    <div class="ornament-divider">
-      <div class="orn-line"></div>
-      <div class="orn-dot"></div>
-      <div class="orn-dot-gap"></div>
-      <div class="orn-diamond"></div>
-      <div class="orn-dot-gap"></div>
-      <div class="orn-dot"></div>
-      <div class="orn-line"></div>
-    </div>
-    <span class="sec-title">Maps</span>
-    <span class="sec-sub">Find your way to celebrate with us</span>
-  </div>
-
-  <div class="section-frame" style="max-width:660px;">
-    <div class="frame-inner"></div>
-    <div class="corner-tr"></div><div class="corner-bl"></div>
-    <div class="maps-grid">
-      <div class="map-card">
-        <h3>St. Isidore the Farmer Parish<br>Agdangan, Quezon</h3>
-        <img class="venue-sketch" src="images/church.png" alt="St. Isidore Parish Church">
-        <div class="map-btns">
-          <a class="map-btn" href="https://maps.google.com/?q=St+Isidore+Parish+Church+-+Poblacion+I,+Agdangan,+Quezon" target="_blank">Google Maps</a>
-          <a class="map-btn filled" href="https://ul.waze.com/ul?q=St+Isidore+Parish+Church+-+Poblacion+I,+Agdangan,+Quezon" target="_blank">Waze</a>
+      <div class="section-frame section-frame-wide">
+        <div class="frame-inner"></div>
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="timeline-wrap">
+          <div class="timeline-row">
+            <div class="tl-item">
+              <div class="tl-icon">
+                <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"></circle><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"></path><circle cx="18" cy="7" r="2"></circle><path d="M21 14c0-2 1.3-3 2.5-3"></path></svg>
+              </div>
+              <span class="tl-time">8:30 AM</span>
+              <span class="tl-event">Arrival of<br>Guests</span>
+            </div>
+            <div class="tl-item">
+              <div class="tl-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2v3M8 5.5l1.5 2M16 5.5l-1.5 2"></path><path d="M5 13c0-3.9 3.1-7 7-7s7 3.1 7 7c0 2.5-1.3 4.7-3.3 6L12 22l-3.7-3c-2-1.3-3.3-3.5-3.3-6z"></path><circle cx="12" cy="13" r="2"></circle></svg>
+              </div>
+              <span class="tl-time">9:00 AM</span>
+              <span class="tl-event">Wedding<br>Ceremony</span>
+            </div>
+            <div class="tl-item">
+              <div class="tl-icon">
+                <svg viewBox="0 0 24 24"><path d="M7 3l5 7 5-7"></path><line x1="12" y1="10" x2="12" y2="21"></line><line x1="8" y1="21" x2="16" y2="21"></line><path d="M17 6c1-1 3-.5 3 1.5a3 3 0 01-3 3"></path></svg>
+              </div>
+              <span class="tl-time">11:00 AM</span>
+              <span class="tl-event">Cocktail<br>Hour</span>
+            </div>
+            <div class="tl-item">
+              <div class="tl-icon">
+                <svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"></path></svg>
+              </div>
+              <span class="tl-time">12:00 PM</span>
+              <span class="tl-event">Reception<br>Lunch</span>
+            </div>
+            <div class="tl-item">
+              <div class="tl-icon">
+                <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"></path><circle cx="12" cy="12" r="9"></circle></svg>
+              </div>
+              <span class="tl-time">3:00 PM</span>
+              <span class="tl-event">Farewell</span>
+            </div>
+          </div>
+          <div class="reception-note">
+            <span class="reception-note-label">Reception Venue</span>
+            <span class="reception-note-venue">Salvatierra Beach Resort, Quezon</span>
+          </div>
         </div>
       </div>
-      <div class="map-card">
-        <h3>Salvatierra Beach Resort<br>Quezon</h3>
-        <img class="venue-sketch" src="images/resort.png" alt="Salvatierra Beach Resort">
-        <div class="map-btns">
-          <a class="map-btn" href="https://maps.google.com/?q=Salvatierra+Beach+Resort+Quezon" target="_blank">Google Maps</a>
-          <a class="map-btn filled" href="https://ul.waze.com/ul?q=Salvatierra+Beach+Resort+Quezon" target="_blank">Waze</a>
+    </section>
+
+    <section id="maps" class="fade-section section-centered">
+      <img class="sec-flower sec-flower-maps-left" src="images/flower4.png" alt="" aria-hidden="true">
+      <img class="sec-flower sec-flower-maps-bottom-right" src="images/flower1.png" alt="" aria-hidden="true">
+      <img class="sec-flower sec-flower-maps-top-right" src="images/flower3.png" alt="" aria-hidden="true">
+
+      <div class="sec-title-wrap">
+        <div class="ornament-divider">
+          <div class="orn-line"></div>
+          <div class="orn-dot"></div>
+          <div class="orn-dot-gap"></div>
+          <div class="orn-diamond"></div>
+          <div class="orn-dot-gap"></div>
+          <div class="orn-dot"></div>
+          <div class="orn-line"></div>
+        </div>
+        <span class="sec-title">Maps</span>
+        <span class="sec-sub">Find your way to celebrate with us</span>
+      </div>
+
+      <div class="section-frame section-frame-maps">
+        <div class="frame-inner"></div>
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="maps-grid">
+          <div class="map-card">
+            <h3>St. Isidore the Farmer Parish<br>Agdangan, Quezon</h3>
+            <img class="venue-sketch" src="images/church.png" alt="St. Isidore Parish Church">
+            <div class="map-btns">
+              <a class="map-btn" href="https://maps.google.com/?q=St+Isidore+Parish+Church+-+Poblacion+I,+Agdangan,+Quezon" target="_blank" rel="noopener noreferrer">Google Maps</a>
+              <a class="map-btn filled" href="https://ul.waze.com/ul?q=St+Isidore+Parish+Church+-+Poblacion+I,+Agdangan,+Quezon" target="_blank" rel="noopener noreferrer">Waze</a>
+            </div>
+          </div>
+          <div class="map-card">
+            <h3>Salvatierra Beach Resort<br>Quezon</h3>
+            <img class="venue-sketch" src="images/resort.png" alt="Salvatierra Beach Resort">
+            <div class="map-btns">
+              <a class="map-btn" href="https://maps.google.com/?q=Salvatierra+Beach+Resort+Quezon" target="_blank" rel="noopener noreferrer">Google Maps</a>
+              <a class="map-btn filled" href="https://ul.waze.com/ul?q=Salvatierra+Beach+Resort+Quezon" target="_blank" rel="noopener noreferrer">Waze</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ══ DRESS CODE ══ -->
-<section id="dresscode" class="fade-section" style="text-align:center;">
-  <img class="sec-flower" style="left:-15px;top:0;height:100%;width:130px;object-fit:contain;object-position:center left;opacity:0.30;filter:grayscale(100%) invert(1);" src="images/flower2.png" alt="">
-  <img class="sec-flower" style="right:-15px;top:0;height:100%;width:90px;object-fit:contain;object-position:center right;opacity:0.25;transform:scaleX(-1);filter:grayscale(100%) invert(1);" src="images/flower2.png" alt="">
+    <section id="dresscode" class="fade-section section-centered">
+      <img class="sec-flower sec-flower-dresscode-left" src="images/flower2.png" alt="" aria-hidden="true">
+      <img class="sec-flower sec-flower-dresscode-right" src="images/flower2.png" alt="" aria-hidden="true">
 
-  <div class="sec-title-wrap">
-    <div class="ornament-divider">
-      <div class="orn-line"></div>
-      <div class="orn-dot"></div>
-      <div class="orn-dot-gap"></div>
-      <div class="orn-diamond"></div>
-      <div class="orn-dot-gap"></div>
-      <div class="orn-dot"></div>
-      <div class="orn-line"></div>
-    </div>
-    <span class="sec-title">Dress Code</span>
-    <span class="sec-sub">Attire for the celebration</span>
-  </div>
-
-  <div class="section-frame" style="max-width:460px;">
-    <div class="frame-inner"></div>
-    <div class="corner-tr"></div><div class="corner-bl"></div>
-    <div class="dress-couple">
-      <img src="images/dresscode.png" alt="Dress code illustration – all black attire">
-    </div>
-    <p class="dress-sub">To maintain the tone of the event, we kindly ask guests to wear semi formal all black attire.</p>
-  </div>
-</section>
-
-<!-- ══ RSVP ══ -->
-<section id="rsvp" class="fade-section">
-  <img class="sec-flower" style="right:-5px;bottom:-10px;width:160px;height:auto;opacity:0.12;transform:rotate(10deg);filter:grayscale(100%) invert(1);" src="images/flower3.png" alt="">
-  <img class="sec-flower" style="left:-5px;top:20px;width:80px;height:auto;opacity:0.10;filter:grayscale(100%) invert(1);" src="images/flower1.png" alt="">
-  <img class="sec-flower" style="left:-15px;bottom:-20px;width:180px;height:auto;opacity:0.10;transform:scaleX(-1) rotate(-8deg);filter:grayscale(100%) invert(1);" src="images/flower5.png" alt="">
-
-  <div class="sec-title-wrap">
-    <div class="ornament-divider">
-      <div class="orn-line"></div>
-      <div class="orn-dot"></div>
-      <div class="orn-dot-gap"></div>
-      <div class="orn-diamond"></div>
-      <div class="orn-dot-gap"></div>
-      <div class="orn-dot"></div>
-      <div class="orn-line"></div>
-    </div>
-    <span class="sec-title">RSVP</span>
-    <span class="sec-sub">Kindly respond before June 1, 2026</span>
-  </div>
-
-  <div class="section-frame">
-    <div class="frame-inner"></div>
-    <div class="corner-tr"></div><div class="corner-bl"></div>
-    <p class="rsvp-text">We can't wait to celebrate this special day with you, and would be so grateful to receive your response on or before June 1, 2026.</p>
-    <a class="rsvp-btn" href="mailto:shakiell.chara2026@gmail.com">Send Your RSVP ✉</a>
-  </div>
-</section>
-
-<!-- ══ GIFTS ══ -->
-<section id="gifts" class="fade-section" style="text-align:center;">
-  <img class="sec-flower" style="top:-40px;left:-25px;width:220px;height:auto;opacity:0.28;filter:grayscale(100%);" src="images/flower4.png" alt="">
-  <img class="sec-flower" style="bottom:-15px;right:5px;width:85px;height:auto;opacity:0.22;filter:grayscale(100%);" src="images/flower2.png" alt="">
-  <img class="sec-flower" style="right:-40px;top:50%;transform:translateY(-30%);width:200px;height:auto;opacity:0.30;filter:grayscale(100%);" src="images/flower1.png" alt="">
-
-  <div class="sec-title-wrap">
-    <div class="ornament-divider">
-      <div class="orn-line"></div>
-      <div class="orn-dot"></div>
-      <div class="orn-dot-gap"></div>
-      <div class="orn-diamond"></div>
-      <div class="orn-dot-gap"></div>
-      <div class="orn-dot"></div>
-      <div class="orn-line"></div>
-    </div>
-    <span class="sec-title">Gifts</span>
-    <span class="sec-sub">Your presence is our present</span>
-  </div>
-
-  <div class="section-frame" style="max-width:480px;">
-    <div class="frame-inner"></div>
-    <div class="corner-tr"></div><div class="corner-bl"></div>
-    <p class="gifts-text">Your presence truly means the world to us, and that's already the best gift we could ask for.<br><br>But if you'd like to share a little something, monetary gifts are sincerely appreciated.</p>
-  </div>
-</section>
-
-<!-- ══ FAQS ══ -->
-<section id="faqs" class="fade-section" style="text-align:center;padding-bottom:90px;">
-  <img class="sec-flower" style="left:-10px;top:0;height:100%;width:120px;object-fit:contain;object-position:top left;opacity:0.20;filter:grayscale(100%) invert(1);" src="images/flower2.png" alt="">
-  <img class="sec-flower" style="right:-15px;bottom:-10px;width:150px;height:auto;opacity:0.14;transform:scaleX(-1) rotate(10deg);filter:grayscale(100%) invert(1);" src="images/flower5.png" alt="">
-
-  <div class="sec-title-wrap">
-    <div class="ornament-divider">
-      <div class="orn-line"></div>
-      <div class="orn-dot"></div>
-      <div class="orn-dot-gap"></div>
-      <div class="orn-diamond"></div>
-      <div class="orn-dot-gap"></div>
-      <div class="orn-dot"></div>
-      <div class="orn-line"></div>
-    </div>
-    <span class="sec-title">FAQs</span>
-    <span class="sec-sub">Everything you need to know</span>
-  </div>
-
-  <div class="section-frame" style="max-width:560px;">
-    <div class="frame-inner"></div>
-    <div class="corner-tr"></div><div class="corner-bl"></div>
-    <div class="faq-list">
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">What if I can't make it?</div>
-        <div class="faq-a">No worries at all — just send us a quick message. If we don't hear from you by June 1, we'll happily count you in.</div>
+      <div class="sec-title-wrap">
+        <div class="ornament-divider">
+          <div class="orn-line"></div>
+          <div class="orn-dot"></div>
+          <div class="orn-dot-gap"></div>
+          <div class="orn-diamond"></div>
+          <div class="orn-dot-gap"></div>
+          <div class="orn-dot"></div>
+          <div class="orn-line"></div>
+        </div>
+        <span class="sec-title">Dress Code</span>
+        <span class="sec-sub">Attire for the celebration</span>
       </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">Is there parking available?</div>
-        <div class="faq-a">Yes! There's parking at both the church and Salvatierra Beach Resort.</div>
-      </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">Can I take photos during the ceremony?</div>
-        <div class="faq-a">We'll be having an unplugged ceremony, so we kindly ask everyone to keep phones and cameras away during that time. You can take as many photos as you like after the ceremony and during the reception.</div>
-      </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">Can I bring someone or my children?</div>
-        <div class="faq-a">We're keeping this an intimate celebration, so the invitation is just for the names mentioned. This will be an adults-only event so everyone can relax and enjoy the day.</div>
-      </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">Can I sit anywhere during the reception?</div>
-        <div class="faq-a">Don't worry — seats will be prepared for everyone.</div>
-      </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">When can I leave?</div>
-        <div class="faq-a">We'd love for you to stay and celebrate with us until around 3:00 PM.</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<footer>With love, <span>Shakiell & Chara</span> — June 20, 2026</footer>
+      <div class="section-frame section-frame-narrow">
+        <div class="frame-inner"></div>
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="dress-couple">
+          <img src="images/dresscode.png" alt="Dress code illustration - all black attire">
+        </div>
+        <p class="dress-sub">To maintain the tone of the event, we kindly ask guests to wear semi formal all black attire.</p>
+      </div>
+    </section>
 
-<script src="script.js"></script>
+    <section id="rsvp" class="fade-section">
+      <img class="sec-flower sec-flower-rsvp-bottom-right" src="images/flower3.png" alt="" aria-hidden="true">
+      <img class="sec-flower sec-flower-rsvp-top-left" src="images/flower1.png" alt="" aria-hidden="true">
+      <img class="sec-flower sec-flower-rsvp-bottom-left" src="images/flower5.png" alt="" aria-hidden="true">
 
+      <div class="sec-title-wrap">
+        <div class="ornament-divider">
+          <div class="orn-line"></div>
+          <div class="orn-dot"></div>
+          <div class="orn-dot-gap"></div>
+          <div class="orn-diamond"></div>
+          <div class="orn-dot-gap"></div>
+          <div class="orn-dot"></div>
+          <div class="orn-line"></div>
+        </div>
+        <span class="sec-title">RSVP</span>
+        <span class="sec-sub">Kindly respond before June 1, 2026</span>
+      </div>
+
+      <div class="section-frame">
+        <div class="frame-inner"></div>
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <p class="rsvp-text">We can't wait to celebrate this special day with you, and would be so grateful to receive your response on or before June 1, 2026.</p>
+        <a class="rsvp-btn" href="mailto:shakiell.chara2026@gmail.com">Send Your RSVP &#10009;</a>
+      </div>
+    </section>
+
+    <section id="gifts" class="fade-section section-centered">
+      <img class="sec-flower sec-flower-gifts-top-left" src="images/flower4.png" alt="" aria-hidden="true">
+      <img class="sec-flower sec-flower-gifts-bottom-right" src="images/flower2.png" alt="" aria-hidden="true">
+      <img class="sec-flower sec-flower-gifts-middle-right" src="images/flower1.png" alt="" aria-hidden="true">
+
+      <div class="sec-title-wrap">
+        <div class="ornament-divider">
+          <div class="orn-line"></div>
+          <div class="orn-dot"></div>
+          <div class="orn-dot-gap"></div>
+          <div class="orn-diamond"></div>
+          <div class="orn-dot-gap"></div>
+          <div class="orn-dot"></div>
+          <div class="orn-line"></div>
+        </div>
+        <span class="sec-title">Gifts</span>
+        <span class="sec-sub">Your presence is our present</span>
+      </div>
+
+      <div class="section-frame section-frame-gifts">
+        <div class="frame-inner"></div>
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <p class="gifts-text">Your presence truly means the world to us, and that's already the best gift we could ask for.<br><br>But if you'd like to share a little something, monetary gifts are sincerely appreciated.</p>
+      </div>
+    </section>
+
+    <section id="faqs" class="fade-section section-centered section-faqs">
+      <img class="sec-flower sec-flower-faqs-left" src="images/flower2.png" alt="" aria-hidden="true">
+      <img class="sec-flower sec-flower-faqs-right" src="images/flower5.png" alt="" aria-hidden="true">
+
+      <div class="sec-title-wrap">
+        <div class="ornament-divider">
+          <div class="orn-line"></div>
+          <div class="orn-dot"></div>
+          <div class="orn-dot-gap"></div>
+          <div class="orn-diamond"></div>
+          <div class="orn-dot-gap"></div>
+          <div class="orn-dot"></div>
+          <div class="orn-line"></div>
+        </div>
+        <span class="sec-title">FAQs</span>
+        <span class="sec-sub">Everything you need to know</span>
+      </div>
+
+      <div class="section-frame section-frame-faqs">
+        <div class="frame-inner"></div>
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="faq-list">
+          <article class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">What if I can't make it?</button>
+            <div class="faq-a" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">No worries at all &mdash; just send us a quick message. If we don't hear from you by June 1, we'll happily count you in.</div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">Is there parking available?</button>
+            <div class="faq-a" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">Yes! There's parking at both the church and Salvatierra Beach Resort.</div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">Can I take photos during the ceremony?</button>
+            <div class="faq-a" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">We'll be having an unplugged ceremony, so we kindly ask everyone to keep phones and cameras away during that time. You can take as many photos as you like after the ceremony and during the reception.</div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4">Can I bring someone or my children?</button>
+            <div class="faq-a" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">We're keeping this an intimate celebration, so the invitation is just for the names mentioned. This will be an adults-only event so everyone can relax and enjoy the day.</div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5">Can I sit anywhere during the reception?</button>
+            <div class="faq-a" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">Don't worry &mdash; seats will be prepared for everyone.</div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-answer-6" id="faq-question-6">When can I leave?</button>
+            <div class="faq-a" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">We'd love for you to stay and celebrate with us until around 3:00 PM.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>With love, <span>Shakiell &amp; Chara</span> &mdash; June 20, 2026</footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
