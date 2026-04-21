@@ -318,12 +318,38 @@ section { min-height:100vh; display:flex; flex-direction:column; align-items:cen
 .cd-sub { font-size: 8px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #666; margin-top: 6px; }
 
 .e-grid { display:grid; grid-template-columns:1fr 1fr; gap:26px 44px; max-width:540px; text-align:left; width:100%; }
-.e-grid-entourage { max-width:760px; }
-.e-group h3 { font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #444; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #ccc; }
+.e-grid-entourage { max-width:760px; width:100%; margin:0 auto; text-align:center; align-items:start; }
+.entourage-layout { width:100%; display:flex; flex-direction:column; gap:30px; }
+.e-section { width:100%; display:flex; flex-direction:column; gap:14px; }
+.e-group {
+  padding: 18px 14px;
+  border: 1px solid #d6d1ca;
+  background: rgba(255,255,255,0.42);
+  min-height: 100%;
+}
+.e-group-wide { grid-column: 1 / -1; }
+.e-group h3 {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #2f2f2f;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ccc;
+}
 .e-group p { font-size: 12px; font-weight: 400; line-height: 2; color: #333; }
-.e-divider { font-size: 8px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #aaa; grid-column: 1/-1; text-align: center; padding: 8px 0; }
-.e-divider-sub { padding-top: 0; margin-top: -14px; color: #777; }
-.e-subrole { margin-top: 18px; }
+.e-divider {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #7e776e;
+  text-align: center;
+  padding: 0;
+}
+.e-divider-heading { font-size: 10px; color: #4a433c; }
+.e-divider-sub { color: #777; margin-top: -6px; }
 
 .timeline-wrap { width:100%; }
 .timeline-row {
@@ -418,6 +444,11 @@ footer span { color: #aaa; }
   .hero-flower5 { display:none; }
   #music-player { bottom:16px; left:16px; }
   .hero-logo-img { width: 92vw; }
+  .entourage-layout { gap:22px; }
+  .e-group { padding:16px 12px; }
+  .e-group h3 { font-size:9px; letter-spacing:2.2px; }
+  .e-group p { font-size:11px; line-height:1.85; }
+  .e-divider-heading { font-size:9px; }
 }
 
 @keyframes petalFall {
